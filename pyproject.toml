@@ -29,7 +29,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://llmwise.ai"
-Repository = "https://github.com/researchaudio/modelmesh"
+Repository = "https://github.com/LLMWise-AI/llmwise-python-sdk"
 Documentation = "https://llmwise.ai/docs"
 
 [tool.setuptools]
