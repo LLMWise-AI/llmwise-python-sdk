@@ -2,7 +2,7 @@ from llmwise_sdk import LLMWise
 
 
 def main() -> None:
-    client = LLMWise()
+    client = LLMWise("mm_sk_...")  # or set LLMWISE_API_KEY env var
     for ev in client.chat_stream(
         model="claude-sonnet-4.5",
         messages=[{"role": "user", "content": "Explain what a circuit breaker is in 5 bullets."}],
@@ -16,4 +16,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

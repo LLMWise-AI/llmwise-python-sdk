@@ -2,7 +2,7 @@ from llmwise_sdk import LLMWise
 
 
 def main() -> None:
-    client = LLMWise()
+    client = LLMWise("mm_sk_...")  # or set LLMWISE_API_KEY env var
     by_model: dict[str, str] = {}
 
     for ev in client.compare_stream(
@@ -27,4 +27,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

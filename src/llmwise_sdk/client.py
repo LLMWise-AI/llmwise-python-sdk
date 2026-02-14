@@ -24,7 +24,6 @@ class LLMWise:
 
     def __init__(
         self,
-        *,
         api_key: str | None = None,
         base_url: str | None = None,
         timeout: float = 60.0,
@@ -420,7 +419,6 @@ class AsyncLLMWise:
 
     def __init__(
         self,
-        *,
         api_key: str | None = None,
         base_url: str | None = None,
         timeout: float = 60.0,
@@ -551,4 +549,3 @@ class AsyncLLMWise:
         if not isinstance(data, list):
             raise LLMWiseError(status_code=502, message="Unexpected response shape", payload=data)
         return data
-

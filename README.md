@@ -21,7 +21,7 @@ pip install llmwise-sdk
 ```python
 from llmwise_sdk import LLMWise
 
-client = LLMWise(api_key="mm_sk_...")
+client = LLMWise("mm_sk_...")
 
 resp = client.chat(
     model="auto",
@@ -37,7 +37,7 @@ print(resp["content"])
 ```python
 from llmwise_sdk import LLMWise
 
-client = LLMWise(api_key="mm_sk_...")
+client = LLMWise("mm_sk_...")
 
 for event in client.chat_stream(
     model="claude-sonnet-4.5",
@@ -56,7 +56,7 @@ for event in client.chat_stream(
 ```python
 from llmwise_sdk import LLMWise
 
-client = LLMWise(api_key="mm_sk_...")
+client = LLMWise("mm_sk_...")
 
 for event in client.chat_stream(
     model="claude-sonnet-4.5",
@@ -77,7 +77,7 @@ for event in client.chat_stream(
 ```python
 from llmwise_sdk import LLMWise
 
-client = LLMWise(api_key="mm_sk_...")
+client = LLMWise("mm_sk_...")
 
 events = client.compare_stream(
     models=["gpt-5.2", "claude-sonnet-4.5", "gemini-3-flash"],
@@ -106,4 +106,3 @@ Environment variables:
 
 - Authentication uses `Authorization: Bearer <mm_sk_...>` (or a Clerk JWT).
 - Streaming uses Server-Sent Events (SSE) and yields parsed JSON dictionaries.
-
