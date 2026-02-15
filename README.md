@@ -7,6 +7,8 @@ Lightweight Python client for the LLMWise multi-model API:
 - Compare (run 2+ models in parallel)
 - Blend (synthesize answers from multiple models, supports MoA / Self-MoA)
 - Judge (model-vs-model evaluation)
+- Full API coverage for conversations, history, credits, usage, keys, memory,
+  optimization, and settings.
 
 This SDK is intentionally small: it depends only on `httpx`.
 
@@ -106,3 +108,15 @@ Environment variables:
 
 - Authentication uses `Authorization: Bearer <mm_sk_...>` (or a Clerk JWT).
 - Streaming uses Server-Sent Events (SSE) and yields parsed JSON dictionaries.
+
+## Additional API Helpers
+
+- `conversations()`, `create_conversation()`, `update_conversation()`, `delete_conversation()`
+- `history()`, `get_history_detail()`
+- `credits_wallet()`, `credits_transactions()`, `credits_packs()`, `credits_purchase()`,
+  `credits_confirm_checkout()`, `credits_update_auto_topup()`, `credits_balance()`
+- `usage_summary()`, `usage_recent()`
+- `keys_info()`, `generate_api_key()`, `revoke_api_key()`
+- `memory_list()`, `memory_search()`, `memory_delete()`, `memory_clear()`
+- `optimization_*` helpers, including policy/report/evaluate/replay/test suites/regression schedules
+- `settings_*` helpers, including provider keys, privacy, and copilot state/ask endpoints
