@@ -120,3 +120,67 @@ Environment variables:
 - `memory_list()`, `memory_search()`, `memory_delete()`, `memory_clear()`
 - `optimization_*` helpers, including policy/report/evaluate/replay/test suites/regression schedules
 - `settings_*` helpers, including provider keys, privacy, and copilot state/ask endpoints
+
+## Additional API Helper Examples
+
+### Dashboard/API Health Check (Read-only)
+
+```python
+from llmwise import LLMWise
+
+client = LLMWise()
+
+print("models:", len(client.models()))
+print("balance:", client.credits_balance())
+print("usage:", client.usage_summary(days=7))
+print("conversations:", client.conversations(limit=5))
+```
+
+### Conversation Lifecycle
+
+```python
+from llmwise import LLMWise
+
+client = LLMWise()
+
+convo = client.create_conversation()
+convo_id = convo["id"]
+client.update_conversation(convo_id, title="API smoke room")
+history = client.history(limit=10)
+client.delete_conversation(convo_id)
+
+print("history entries:", history.get("total", 0))
+```
+
+### Credits & Cost
+
+```python
+from llmwise import LLMWise
+
+client = LLMWise()
+
+print("wallet:", client.credits_wallet())
+print("recent usage:", client.usage_recent(days=7, limit=5))
+print("packs:", client.credits_packs())
+```
+
+### Settings and Optimization
+
+```python
+from llmwise import LLMWise
+
+client = LLMWise()
+
+print("copilot:", client.settings_copilot_state())
+print("privacy:", client.settings_privacy())
+print("policy:", client.optimization_policy())
+print("report:", client.optimization_report(days=1))
+```
+
+## Smoke Script
+
+Run all read-only SDK health checks:
+
+```bash
+LLMWISE_API_KEY=mm_sk_... python examples/smoke.py
+```
