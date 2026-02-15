@@ -4,6 +4,8 @@ from typing import Any, AsyncIterator, Iterator
 
 import httpx
 
+from importlib.metadata import PackageNotFoundError, version
+
 from ._util import bearer_headers, env, normalize_api_base
 from .errors import LLMWiseError
 from .sse import aiter_sse_json, iter_sse_json, _raise_for_status
@@ -11,8 +13,12 @@ from .types import JsonDict, Message, RoutingConfig
 
 
 def _user_agent() -> str:
-    # Keep this simple and stable so it shows up cleanly in provider logs.
-    return "llmwise-python-sdk/0.1.0"
+    # Keep this simple and stable so it shows up cleanly in logs.
+    try:
+        v = version("llmwise-sdk")
+    except PackageNotFoundError:  # pragma: no cover
+        v = "0.0.0"
+    return f"llmwise-python-sdk/{v}"
 
 
 class LLMWise:
