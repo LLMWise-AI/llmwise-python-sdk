@@ -15,7 +15,7 @@ from .types import JsonDict, Message, RoutingConfig
 def _user_agent() -> str:
     # Keep this simple and stable so it shows up cleanly in logs.
     try:
-        v = version("llmwise-sdk")
+        v = version("llmwise")
     except PackageNotFoundError:  # pragma: no cover
         v = "0.0.0"
     return f"llmwise-python-sdk/{v}"

@@ -3,8 +3,8 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "llmwise-sdk"
-version = "0.1.0"
+name = "llmwise"
+version = "0.1.1"
 description = "Lightweight Python SDK for the LLMWise multi-model API (chat, compare, blend, judge, failover)."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -39,4 +39,4 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-llmwise_sdk = ["py.typed"]
+llmwise = ["py.typed"]

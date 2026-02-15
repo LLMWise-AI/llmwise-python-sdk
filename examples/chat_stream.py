@@ -1,4 +1,4 @@
-from llmwise_sdk import LLMWise
+from llmwise import LLMWise
 
 
 def main() -> None:

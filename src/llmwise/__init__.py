@@ -4,7 +4,7 @@ from .client import AsyncLLMWise, LLMWise
 from .errors import LLMWiseError
 
 try:
-    __version__ = version("llmwise-sdk")
+    __version__ = version("llmwise")
 except PackageNotFoundError:  # pragma: no cover
     __version__ = "0.0.0"
 

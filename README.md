@@ -13,13 +13,13 @@ This SDK is intentionally small: it depends only on `httpx`.
 ## Install
 
 ```bash
-pip install llmwise-sdk
+pip install llmwise
 ```
 
 ## Quickstart (Chat)
 
 ```python
-from llmwise_sdk import LLMWise
+from llmwise import LLMWise
 
 client = LLMWise("mm_sk_...")
 
@@ -35,7 +35,7 @@ print(resp["content"])
 ## Streaming (Chat)
 
 ```python
-from llmwise_sdk import LLMWise
+from llmwise import LLMWise
 
 client = LLMWise("mm_sk_...")
 
@@ -54,7 +54,7 @@ for event in client.chat_stream(
 ## Failover (Chat + Routing)
 
 ```python
-from llmwise_sdk import LLMWise
+from llmwise import LLMWise
 
 client = LLMWise("mm_sk_...")
 
@@ -75,7 +75,7 @@ for event in client.chat_stream(
 ## Compare (2+ models)
 
 ```python
-from llmwise_sdk import LLMWise
+from llmwise import LLMWise
 
 client = LLMWise("mm_sk_...")
 
